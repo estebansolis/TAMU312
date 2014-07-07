@@ -5,7 +5,7 @@
 #include <iostream>
 
 bool* alu(bool instruction[8], bool input1[8], bool input2[8]) {
-	//and instruction with each condition, or solutions
+
 	bool* alu0 = new bool[8];
 	bool* alu1 = new bool[8];
 	bool* alu2 = new bool[8];
@@ -41,7 +41,7 @@ bool* alu(bool instruction[8], bool input1[8], bool input2[8]) {
 	alu16 = and8(alu16, instruction, addu(output, input1, input2));
 	alu17 = and8(alu17, instruction, subu(output, input1, input2));
 
-	//Or everything together for the answer
+
 	output = or8(output, or8(output, or8(output, or8(output, or8(output, or8(output, or8(output, or8(output, or8(output, or8(output, or8(output, or8(output, or8(output, or8(output, 
 		or8(output, alu0, alu1), alu2), alu3), alu4), alu5), alu6), alu7), alu8), alu9), alu10), alu11), alu12), alu13), alu16), alu17);
 	return output;
