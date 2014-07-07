@@ -1,3 +1,4 @@
+// Esteban Solis
 #include "p1.h"
 #include "p2.h"
 #include "p3.h"
@@ -131,8 +132,27 @@ bool* divu(bool* output, bool dividend[8], bool input2[8]) {
 
 
 bool* mult(bool* output, bool input1[8], bool input2[8]) {
-	
+	bool temp1[16];
+	bool temp2[8];
+	bool temp3[16];
+
+	for(int i = 0; i < 8; i++)
+	{
+		temp1[i] = input1[i];
+		temp1[i+8] = input1[7]; 
+
+	addu(temp2, input2, zero);
+
+	if(temp2[7])
+	{
+		negate(temp1, temp1);
+		negate(temp2, temp2);
+	}
+
+	multu(output, temp1, temp2);
+
 	return output;
+
 }
 
 bool* div(bool* output, bool input1[8], bool input2[8]) {
