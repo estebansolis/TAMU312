@@ -24,7 +24,7 @@ bool eight[8] = {0,0,0,1,0,0,0,0};
 
 // setting everything to 0 
 
-void initialize()
+void initialize() // should only be called at first
 {
 	int i, j;
 	
@@ -71,13 +71,14 @@ bool* getRegistryValue(bool* output, bool registerNum[8])
 	
 void setRegistryValue(bool registerNum[8], bool value[8])
 {
-	registry[ValueInDecimal(registerNum)][0] =  value[0];
+	
+    registry[ValueInDecimal(registerNum)][0] =  value[0];
     registry[ValueInDecimal(registerNum)][1] =  value[1];
     registry[ValueInDecimal(registerNum)][2] =  value[2];
     registry[ValueInDecimal(registerNum)][3] =  value[3];
     registry[ValueInDecimal(registerNum)][4] =  value[4];
     registry[ValueInDecimal(registerNum)][5] =  value[5];
-	registry[ValueInDecimal(registerNum)][6] =  value[6];
+    registry[ValueInDecimal(registerNum)][6] =  value[6];
     registry[ValueInDecimal(registerNum)][7] =  value[7];
 }
 	
@@ -85,12 +86,12 @@ void setRegistryValue(bool registerNum[8], bool value[8])
 
 int toDecimal(bool registerNum[8])
 {
-	return ValueInDecimal(registerNum); 
+	return ValueInDecimal(registerNum); // already in basic functions
 }
 
 void incrementPC()
 {
-	add(PC, PC, four);
+	add(PC, PC, four); adding four to our pc stage
 }	
 	
 
@@ -225,12 +226,12 @@ void mem(bool registerNum[8], bool memlocation[16], bool read, bool write)
 		
 void lw(bool registerNum[8], bool memlocation[16])
 {
-	readMem(registerNum, memlocation);
+	readMem(registerNum, memlocation); // lw function
 }
 
 void sw(bool registerNum[8], bool memlocation[16])
 {
-	writeMem(registerNum, memlocation);
+	writeMem(registerNum, memlocation); // sw function
 }
 
 
