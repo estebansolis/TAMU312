@@ -52,7 +52,7 @@ bool* add(bool* output, bool input1[8], bool input2[8]) {
 
 	if (carryOut0 == 1) 
 	{
-		throw(std::overflow_error("Overflow Error"));
+		throw(std::overflow_error("Overflow"));
 	}
 
 
